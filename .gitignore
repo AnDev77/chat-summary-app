@@ -1,0 +1,35 @@
+# --- Docker & Infrastructure ---
+# DB 데이터는 용량이 크고 보안상 절대 올리면 안 됩니다.
+mysql_data/
+# 로컬 로그 파일
+*.log
+
+# --- Java & Spring Boot ---
+# 빌드 결과물 및 캐시
+.gradle/
+build/
+out/
+!**/src/main/resources/gradle/wrapper/gradle-wrapper.properties
+bin/
+
+# --- IDE (IntelliJ, VS Code) ---
+.idea/
+*.iml
+*.iws
+.vscode/
+.classpath
+.project
+.settings/
+.nbworkspace
+
+# --- Environment & Secrets ---
+# 비밀번호나 API 키가 포함된 파일 (나중에 만들 예정)
+.env
+*.properties
+*.yml
+# 단, 공통 설정인 application.yml은 올리고 싶은 경우 아래처럼 제외 설정을 할 수 있습니다.
+# !src/main/resources/application.yml
+
+# --- OS ---
+.DS_Store
+Thumbs.db
