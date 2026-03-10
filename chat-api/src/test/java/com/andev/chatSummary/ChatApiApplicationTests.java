@@ -1,4 +1,4 @@
-package com.andev.demo;
+package com.andev.chatSummary;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
