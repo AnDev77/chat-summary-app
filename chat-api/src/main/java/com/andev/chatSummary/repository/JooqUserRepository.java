@@ -1,10 +1,8 @@
 package com.andev.chatSummary.repository;
 
-import com.andev.chatSummary.dto.SignUpRequest;
 import com.andev.chatSummary.implement.UserRepository;
 import com.andev.chatSummary.jooq.Tables;
 import com.andev.chatSummary.jooq.enums.EmailVerificationsStatus;
-import com.andev.chatSummary.jooq.tables.EmailVerifications;
 import com.andev.chatSummary.jooq.tables.Users;
 import lombok.RequiredArgsConstructor;
 import org.jooq.DSLContext;

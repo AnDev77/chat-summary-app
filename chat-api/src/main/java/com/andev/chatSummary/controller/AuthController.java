@@ -1,10 +1,11 @@
 package com.andev.chatSummary.controller;
 
 import com.andev.chatSummary.common.ApiResponse;
-import com.andev.chatSummary.dto.LoginRequest;
-import com.andev.chatSummary.dto.SignUpRequest;
+import com.andev.chatSummary.dto.auth.EmailRequest;
+import com.andev.chatSummary.dto.auth.LoginRequest;
+import com.andev.chatSummary.dto.auth.SignUpRequest;
+import org.apache.kafka.shaded.com.google.protobuf.Api;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,13 @@ public class AuthController {
         public ResponseEntity<ApiResponse<Map<String, String>>> signup(@RequestBody SignUpRequest request){
             return ResponseEntity.ok(
                     ApiResponse.ok("회원가입 테스트 성공!", null)
+            );
+        }
+
+        @PostMapping("/email")
+        public ResponseEntity<ApiResponse<String>> emailSend(@RequestBody EmailRequest request){
+            return ResponseEntity.ok(
+                    ApiResponse.ok("이메일 컨트롤러 오류 없음", null)
             );
         }
 
