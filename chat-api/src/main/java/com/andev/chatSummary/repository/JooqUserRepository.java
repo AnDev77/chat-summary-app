@@ -1,12 +1,13 @@
 package com.andev.chatSummary.repository;
 
 import com.andev.chatSummary.implement.UserRepository;
-import com.andev.chatSummary.jooq.Tables;
-import com.andev.chatSummary.jooq.enums.EmailVerificationsStatus;
-import com.andev.chatSummary.jooq.tables.Users;
+import com.project.chatsummary.jooq.enums.EmailVerificationsStatus;
+import com.project.chatsummary.jooq.tables.Users;
 import lombok.RequiredArgsConstructor;
 import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
+
+import static com.project.chatsummary.jooq.Tables.EMAIL_VERIFICATIONS;
 
 @Repository
 @RequiredArgsConstructor
@@ -26,9 +27,9 @@ public class JooqUserRepository implements UserRepository {
     @Override
     public boolean isVerified(String email) {
         return dsl.fetchExists(
-                dsl.selectFrom(Tables.EMAIL_VERIFICATIONS)
-                        .where(Tables.EMAIL_VERIFICATIONS.EMAIL.eq(email))
-                        .and(Tables.EMAIL_VERIFICATIONS.STATUS.eq(EmailVerificationsStatus.VERIFIED))
+                dsl.selectFrom(EMAIL_VERIFICATIONS)
+                        .where(EMAIL_VERIFICATIONS.EMAIL.eq(email))
+                        .and(EMAIL_VERIFICATIONS.STATUS.eq(EmailVerificationsStatus.VERIFIED))
         );
     }
     @Override

@@ -1,7 +1,5 @@
-package com.andev.chatSummary.implement;
-
-import com.andev.chatSummary.jooq.tables.Users;
-import com.andev.chatSummary.jooq.tables.records.UsersRecord;
+package com.andev.chatSummary.implement;;
+import com.project.chatsummary.jooq.tables.Users;
 
 import java.util.Optional;
 
