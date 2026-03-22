@@ -17,20 +17,27 @@ public class ApiResponse<T> {
     private final String message;
     private final T data;
 
-    public static <T> ApiResponse <T> ok(String message, T data) {
-        return ApiResponse.<T>builder() // builder의 함수와 형맞춤.
+    public static <T> ApiResponse<T> ok(String message, T data) {
+        return ApiResponse.<T> builder() // builder의 함수와 형맞춤.
                 .timestamp(LocalDateTime.now())
                 .status(HttpStatus.OK.value())
                 .message(message)
                 .data(data)
                 .build();
     }
+    public static <T> ApiResponse<T> ok(String message){
+        return ApiResponse.<T>builder()
+                .timestamp(LocalDateTime.now())
+                .status(HttpStatus.OK.value())
+                .message(message)
+                .build();
+    }
+
     public static <T> ApiResponse<T> fail(String message){
         return ApiResponse.<T>builder()
                 .timestamp(LocalDateTime.now())
                 .status(HttpStatus.BAD_REQUEST.value())
                 .message(message)
-                .data(null)
                 .build();
     }
 }
