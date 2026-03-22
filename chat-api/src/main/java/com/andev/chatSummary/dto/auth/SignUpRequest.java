@@ -1,4 +1,4 @@
-package com.andev.chatSummary.dto;
+package com.andev.chatSummary.dto.auth;
 
 import lombok.Getter;
 import lombok.Setter;
